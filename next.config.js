@@ -1,4 +1,4 @@
-const { withModuleFederation } = require("@module-federation/nextjs-mf");
+const NextFederationPlugin = require("@module-federation/nextjs-mf");
 
 module.exports = {
   future: { webpack5: true },
@@ -25,23 +25,24 @@ module.exports = {
       },
     ];
   },
-  webpack: (config, options) => {
-    const mfConf = {
-      name: "shell",
-      library: {
-        type: config.output.libraryTarget,
+  webpack: (config) => {
+    config.plugins.push(
+      new NextFederationPlugin({
         name: "shell",
-      },
-      remotes: {
-        marioApp:
-          "marioApp@https://micro-mario.vercel.app/mario/_next/static/runtime/remoteEntry.js",
-        luigiApp:
-          "luigiApp@https://micro-luigi.vercel.app/luigi/_next/static/runtime/remoteEntry.js",
-      },
-      exposes: {},
-    };
-    config.cache = false;
-    withModuleFederation(config, options, mfConf);
+        library: {
+          type: config.output.libraryTarget,
+          name: "shell",
+        },
+        filename: "static/chunks/remoteEntry.js",
+        remotes: {
+          marioApp:
+            "marioApp@https://micro-mario.vercel.app/mario/_next/static/runtime/remoteEntry.js",
+          luigiApp:
+            "luigiApp@https://micro-luigi.vercel.app/luigi/_next/static/runtime/remoteEntry.js",
+        },
+        exposes: {},
+      })
+    );
 
     return config;
   },

@@ -9,19 +9,23 @@ module.exports = {
     return [
       {
         source: "/mario",
-        destination: "http://localhost:3001/mario",
+        destination:
+          "https://micro-mario-46q24z3yb-harrymee94-gmailcom.vercel.app/mario",
       },
       {
         source: "/mario/:path*",
-        destination: "http://localhost:3001/mario/:path*",
+        destination:
+          "https://micro-mario-46q24z3yb-harrymee94-gmailcom.vercel.app/mario/:path*",
       },
       {
         source: "/luigi",
-        destination: "http://localhost:3002/luigi",
+        destination:
+          "https://micro-luigi-fclro5wit-harrymee94-gmailcom.vercel.app/luigi",
       },
       {
         source: "/luigi/:path*",
-        destination: "http://localhost:3002/luigi/:path*",
+        destination:
+          "https://micro-luigi-fclro5wit-harrymee94-gmailcom.vercel.app/luigi/:path*",
       },
     ];
   },

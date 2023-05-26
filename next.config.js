@@ -33,8 +33,10 @@ module.exports = {
         name: "shell",
       },
       remotes: {
-        app1: "app1",
-        app2: "app2",
+        marioApp:
+          "marioApp@https://micro-mario.vercel.app/mario/_next/static/runtime/remoteEntry.js",
+        luigiApp:
+          "luigiApp@https://micro-luigi.vercel.app/luigi/_next/static/runtime/remoteEntry.js",
       },
       exposes: {},
     };

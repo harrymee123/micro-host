@@ -9,7 +9,7 @@ module.exports = {
     return [
       {
         source: "/mario",
-        destination: "https://micro-mario.vercel.app//mario",
+        destination: "https://micro-mario.vercel.app/mario",
       },
       {
         source: "/mario/:path*",

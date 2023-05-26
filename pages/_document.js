@@ -9,7 +9,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <script src="https://micro-luigi.vercel.app/luigi/_next/static/runtime/app1RemoteEntry.js" />
-        <script src="https://micro-mario.vercel.app//mario/_next/static/runtime/app2RemoteEntry.js" />
+        <script src="https://micro-mario.vercel.app/mario/_next/static/runtime/app2RemoteEntry.js" />
         <Head />
         <body>
           <Main />
